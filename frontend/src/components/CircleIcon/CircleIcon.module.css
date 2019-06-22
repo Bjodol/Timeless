@@ -1,0 +1,14 @@
+.container {
+  border-radius: 50%;
+  background-color: #8ed9f7;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+}
+
+.container svg {
+  fill: #ffffff;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: #8ed9f7;
+}
+
+h1 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin: 0;
+}
