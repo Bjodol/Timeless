@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from .users.views import UserViewset
 from timeless.circles.views import CircleViewset, EventViewset
+from rest_framework.authtoken import views
 
 from rest_framework.routers import DefaultRouter
 
@@ -24,5 +25,8 @@ router = DefaultRouter()
 router.register(r"users", UserViewset)
 router.register(r"circles", CircleViewset)
 router.register(r"events", EventViewset)
-
-urlpatterns = [path("admin/", admin.site.urls), path("api/", include(router.urls))]
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("api/", include(router.urls)),
+    path("api-token-auth/", views.obtain_auth_token),
+]
