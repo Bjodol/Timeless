@@ -30,7 +30,7 @@ class CreateEventSerializer(serializers.Serializer):
 class CircleViewset(viewsets.ReadOnlyModelViewSet):
 
     queryset = Circle.objects.all()
-    # permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     serializer_class = CircleSerializer
 
     @action(detail=True, methods=["GET"])
@@ -45,13 +45,14 @@ class CircleViewset(viewsets.ReadOnlyModelViewSet):
     def create_post(self, request, pk=None):
         circle = self.get_object()
         user = request.user
-        if not user.id in circle.members.values():
+        present_member = circle.members.get(pk=user.id)
+        if not present_member:
             raise exceptions.ValidationError("Not in circle!")
         serializer = CreateEventSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         event = Event.objects.create(
             author=user,
-            circle=Circle,
+            circle=circle,
             text=serializer.data["text"],
             image_url=serializer.data["image_url"],
         )
