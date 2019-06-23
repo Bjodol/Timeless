@@ -8172,6 +8172,7 @@ react-scripts@3.0.1:
   optionalDependencies:
     fsevents "2.0.6"
 
+<<<<<<< HEAD
 react-svg@^10.0.9:
   version "10.0.9"
   resolved "https://registry.yarnpkg.com/react-svg/-/react-svg-10.0.9.tgz#b8f5a3231243467799901132a2af7cd31ff7c610"
@@ -8181,6 +8182,8 @@ react-svg@^10.0.9:
     "@tanem/svg-injector" "^8.0.14"
     prop-types "^15.7.2"
 
+=======
+>>>>>>> 39856a1d24f224dc7a67dbe2ece614196466cc55
 react@^16.8.6:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.6.tgz#ad6c3a9614fd3a4e9ef51117f54d888da01f2bbe"

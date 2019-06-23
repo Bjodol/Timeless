@@ -26,8 +26,9 @@ const events: { author: string; text: string; circle: Circles }[] = [
 ];
 
 const CircleFeed: React.FC<Props> = ({ match }) => {
-  const eventElements = events.map((event, key) => (
+  const eventElements = events.map((event, i) => (
     <Event
+      key={`event-${i}`}
       author={event.author}
       circle={event.circle}
       text={event.text}

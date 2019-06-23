@@ -10,7 +10,7 @@ interface Props {
 
 const TheCircles: React.FC<Props> = ({ circles }) => {
   const circleElements = circles.map((circle, i) => (
-    <div className={styles.icon}>
+    <div className={styles.icon} key={`circle-${i}`}>
       <Link to={`/${circle}`}>
         <CircleIcon name={circle} />
       </Link>
